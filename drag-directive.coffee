@@ -1,7 +1,11 @@
 class InteractionHelper
 
   @normalisePoints = (event) ->
-    if event.touches? then event.touches[0] else event
+    event = if event.touches? then event.touches[0] else event
+
+    event =
+      pageX: event.pageX
+      pageY: event.pageY
 
 DragDirective = ($document) ->
 
